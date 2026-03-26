@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:47:41
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:49:41
 // Données du 2026-03-25 19:55:04
 // Source : Base de données MySQL GEX
 // Symboles supportés : SPY
@@ -54,46 +54,57 @@ put_wall_3 = current_symbol == "SPY" ? spy_put_wall_3 : na
 
 // ==================== DESSIN DES LIGNES ====================
 
-// Utiliser hline() qui suit automatiquement l'échelle des prix
-// Call Walls
-hline(show_call_walls and not na(call_wall_1) ? call_wall_1 : na, "Call Wall #1", color=call_color_1, linestyle=hline.style_solid, linewidth=2)
-hline(show_call_walls and not na(call_wall_2) ? call_wall_2 : na, "Call Wall #2", color=call_color_2, linestyle=hline.style_solid, linewidth=2)
-hline(show_call_walls and not na(call_wall_3) ? call_wall_3 : na, "Call Wall #3", color=call_color_3, linestyle=hline.style_solid, linewidth=2)
-
-// Put Walls
-hline(show_put_walls and not na(put_wall_1) ? put_wall_1 : na, "Put Wall #1", color=put_color_1, linestyle=hline.style_solid, linewidth=2)
-hline(show_put_walls and not na(put_wall_2) ? put_wall_2 : na, "Put Wall #2", color=put_color_2, linestyle=hline.style_solid, linewidth=2)
-hline(show_put_walls and not na(put_wall_3) ? put_wall_3 : na, "Put Wall #3", color=put_color_3, linestyle=hline.style_solid, linewidth=2)
-
-// Labels (uniquement sur la dernière barre)
-if barstate.islast and show_labels and not na(call_wall_1)
-    // Labels Call Walls
+// Dessiner uniquement sur la dernière barre avec extend.both pour couvrir tout le graphique
+if barstate.islast and not na(call_wall_1)
+    // Call Walls
     if show_call_walls
-        label.new(bar_index, call_wall_1, "C1: $" + str.tostring(call_wall_1, "#.##"),
-                  color=color.new(call_color_1, 85), textcolor=call_color_1,
-                  style=label.style_label_left, size=size.small)
-    if show_call_walls and not na(call_wall_2)
-        label.new(bar_index, call_wall_2, "C2: $" + str.tostring(call_wall_2, "#.##"),
-                  color=color.new(call_color_2, 85), textcolor=call_color_2,
-                  style=label.style_label_left, size=size.small)
-    if show_call_walls and not na(call_wall_3)
-        label.new(bar_index, call_wall_3, "C3: $" + str.tostring(call_wall_3, "#.##"),
-                  color=color.new(call_color_3, 85), textcolor=call_color_3,
-                  style=label.style_label_left, size=size.small)
+        line.new(bar_index - 1, call_wall_1, bar_index, call_wall_1,
+                 color=call_color_1, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, call_wall_1, "C1: $" + str.tostring(call_wall_1, "#.##"),
+                      color=color.new(call_color_1, 85), textcolor=call_color_1,
+                      style=label.style_label_left, size=size.small)
 
-    // Labels Put Walls
+    if show_call_walls and not na(call_wall_2)
+        line.new(bar_index - 1, call_wall_2, bar_index, call_wall_2,
+                 color=call_color_2, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, call_wall_2, "C2: $" + str.tostring(call_wall_2, "#.##"),
+                      color=color.new(call_color_2, 85), textcolor=call_color_2,
+                      style=label.style_label_left, size=size.small)
+
+    if show_call_walls and not na(call_wall_3)
+        line.new(bar_index - 1, call_wall_3, bar_index, call_wall_3,
+                 color=call_color_3, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, call_wall_3, "C3: $" + str.tostring(call_wall_3, "#.##"),
+                      color=color.new(call_color_3, 85), textcolor=call_color_3,
+                      style=label.style_label_left, size=size.small)
+
+    // Put Walls
     if show_put_walls and not na(put_wall_1)
-        label.new(bar_index, put_wall_1, "P1: $" + str.tostring(put_wall_1, "#.##"),
-                  color=color.new(put_color_1, 85), textcolor=put_color_1,
-                  style=label.style_label_left, size=size.small)
+        line.new(bar_index - 1, put_wall_1, bar_index, put_wall_1,
+                 color=put_color_1, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, put_wall_1, "P1: $" + str.tostring(put_wall_1, "#.##"),
+                      color=color.new(put_color_1, 85), textcolor=put_color_1,
+                      style=label.style_label_left, size=size.small)
+
     if show_put_walls and not na(put_wall_2)
-        label.new(bar_index, put_wall_2, "P2: $" + str.tostring(put_wall_2, "#.##"),
-                  color=color.new(put_color_2, 85), textcolor=put_color_2,
-                  style=label.style_label_left, size=size.small)
+        line.new(bar_index - 1, put_wall_2, bar_index, put_wall_2,
+                 color=put_color_2, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, put_wall_2, "P2: $" + str.tostring(put_wall_2, "#.##"),
+                      color=color.new(put_color_2, 85), textcolor=put_color_2,
+                      style=label.style_label_left, size=size.small)
+
     if show_put_walls and not na(put_wall_3)
-        label.new(bar_index, put_wall_3, "P3: $" + str.tostring(put_wall_3, "#.##"),
-                  color=color.new(put_color_3, 85), textcolor=put_color_3,
-                  style=label.style_label_left, size=size.small)
+        line.new(bar_index - 1, put_wall_3, bar_index, put_wall_3,
+                 color=put_color_3, width=2, extend=extend.both)
+        if show_labels
+            label.new(bar_index, put_wall_3, "P3: $" + str.tostring(put_wall_3, "#.##"),
+                      color=color.new(put_color_3, 85), textcolor=put_color_3,
+                      style=label.style_label_left, size=size.small)
 
 // Message si symbole non supporté
 if barstate.islast and na(call_wall_1)
