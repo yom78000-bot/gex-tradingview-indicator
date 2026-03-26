@@ -1,5 +1,5 @@
 {
-  "version": "2026-03-26T14:51:59Z",
+  "version": "2026-03-26T19:29:58Z",
   "symbols": [
     "AAPL",
     "AMZN",
@@ -9,184 +9,237 @@
     "SPY"
   ],
   "aapl": {
-    "price": 256.24,
+    "price": 253.25,
     "call_walls": [
       {
         "rank": 1,
-        "strike": 260.0,
-        "gex": 3576797
+        "strike": 265.0,
+        "gex": 3548459
       },
       {
         "rank": 2,
-        "strike": 255.0,
-        "gex": 47795
+        "strike": 260.0,
+        "gex": 3205421
       },
       {
         "rank": 3,
-        "strike": 250.0,
-        "gex": 12048
+        "strike": 270.0,
+        "gex": 992762
       }
     ],
-    "put_walls": [],
-    "gamma_flip": null,
-    "last_update": "2026-03-26T14:50:06Z"
+    "put_walls": [
+      {
+        "rank": 1,
+        "strike": 245.0,
+        "gex": -490140
+      },
+      {
+        "rank": 2,
+        "strike": 240.0,
+        "gex": -152652
+      },
+      {
+        "rank": 3,
+        "strike": 235.0,
+        "gex": -87601
+      }
+    ],
+    "gamma_flip": 255.0,
+    "last_update": "2026-03-26T19:25:06Z"
   },
   "amzn": {
-    "price": 212.4,
+    "price": 208.14,
     "call_walls": [
       {
         "rank": 1,
         "strike": 215.0,
-        "gex": 765925
+        "gex": 620180
       },
       {
         "rank": 2,
-        "strike": 210.0,
-        "gex": 366643
+        "strike": 220.0,
+        "gex": 540801
+      },
+      {
+        "rank": 3,
+        "strike": 225.0,
+        "gex": 468161
       }
     ],
-    "put_walls": [],
-    "gamma_flip": null,
-    "last_update": "2026-03-26T14:50:08Z"
+    "put_walls": [
+      {
+        "rank": 1,
+        "strike": 205.0,
+        "gex": -180587
+      },
+      {
+        "rank": 2,
+        "strike": 195.0,
+        "gex": -124990
+      },
+      {
+        "rank": 3,
+        "strike": 190.0,
+        "gex": -79391
+      }
+    ],
+    "gamma_flip": 210.0,
+    "last_update": "2026-03-26T19:25:10Z"
   },
   "dia": {
-    "price": 463.85,
+    "price": 459.42,
     "call_walls": [
       {
         "rank": 1,
         "strike": 471.0,
-        "gex": 197511
+        "gex": 180921
       },
       {
         "rank": 2,
         "strike": 456.0,
-        "gex": 127009
+        "gex": 139278
       },
       {
         "rank": 3,
-        "strike": 475.0,
-        "gex": 126522
+        "strike": 453.0,
+        "gex": 127987
       }
     ],
     "put_walls": [
       {
         "rank": 1,
         "strike": 470.0,
-        "gex": -143618
+        "gex": -133118
       },
       {
         "rank": 2,
         "strike": 465.0,
-        "gex": -104565
+        "gex": -102858
       },
       {
         "rank": 3,
-        "strike": 455.0,
-        "gex": -71932
+        "strike": 450.0,
+        "gex": -92098
       }
     ],
     "gamma_flip": 470.5,
-    "last_update": "2026-03-26T14:50:07Z"
+    "last_update": "2026-03-26T19:25:08Z"
   },
   "ibit": {
-    "price": 39.36,
-    "call_walls": [],
-    "put_walls": [
-      {
-        "rank": 1,
-        "strike": 40.0,
-        "gex": -3082000
-      },
-      {
-        "rank": 2,
-        "strike": 39.0,
-        "gex": -1123075
-      },
-      {
-        "rank": 3,
-        "strike": 39.5,
-        "gex": -365794
-      }
-    ],
-    "gamma_flip": null,
-    "last_update": "2026-03-26T14:50:09Z"
-  },
-  "qqq": {
-    "price": 581.67,
+    "price": 38.82,
     "call_walls": [
       {
         "rank": 1,
-        "strike": 590.0,
-        "gex": 307072
+        "strike": 41.0,
+        "gex": 397913
       },
       {
         "rank": 2,
-        "strike": 589.0,
-        "gex": 201522
+        "strike": 42.5,
+        "gex": 317222
       },
       {
         "rank": 3,
-        "strike": 593.0,
-        "gex": 127778
+        "strike": 42.0,
+        "gex": 296086
+      }
+    ],
+    "put_walls": [
+      {
+        "rank": 1,
+        "strike": 38.0,
+        "gex": -7754709
+      },
+      {
+        "rank": 2,
+        "strike": 37.0,
+        "gex": -2754398
+      },
+      {
+        "rank": 3,
+        "strike": 40.0,
+        "gex": -2653024
+      }
+    ],
+    "gamma_flip": 39.5,
+    "last_update": "2026-03-26T19:25:11Z"
+  },
+  "qqq": {
+    "price": 574.93,
+    "call_walls": [
+      {
+        "rank": 1,
+        "strike": 605.0,
+        "gex": 525825
+      },
+      {
+        "rank": 2,
+        "strike": 620.0,
+        "gex": 429516
+      },
+      {
+        "rank": 3,
+        "strike": 610.0,
+        "gex": 293613
       }
     ],
     "put_walls": [
       {
         "rank": 1,
         "strike": 580.0,
-        "gex": -2722531
+        "gex": -2747700
       },
       {
         "rank": 2,
         "strike": 570.0,
-        "gex": -893913
+        "gex": -1014597
       },
       {
         "rank": 3,
-        "strike": 585.0,
-        "gex": -893493
+        "strike": 575.0,
+        "gex": -943910
       }
     ],
-    "gamma_flip": 585.0,
-    "last_update": "2026-03-26T14:50:08Z"
+    "gamma_flip": 592.5,
+    "last_update": "2026-03-26T19:25:09Z"
   },
   "spy": {
-    "price": 652.52,
+    "price": 646.03,
     "call_walls": [
       {
         "rank": 1,
         "strike": 657.0,
-        "gex": 2965535
+        "gex": 2839074
       },
       {
         "rank": 2,
-        "strike": 655.0,
-        "gex": 1436427
+        "strike": 679.0,
+        "gex": 1660155
       },
       {
         "rank": 3,
-        "strike": 660.0,
-        "gex": 653015
+        "strike": 655.0,
+        "gex": 1399668
       }
     ],
     "put_walls": [
       {
         "rank": 1,
         "strike": 650.0,
-        "gex": -1330763
+        "gex": -1355550
       },
       {
         "rank": 2,
-        "strike": 640.0,
-        "gex": -1057775
+        "strike": 630.0,
+        "gex": -1216911
       },
       {
         "rank": 3,
-        "strike": 652.0,
-        "gex": -403123
+        "strike": 640.0,
+        "gex": -1178699
       }
     ],
     "gamma_flip": 653.5,
-    "last_update": "2026-03-26T14:50:26Z"
+    "last_update": "2026-03-26T19:25:06Z"
   }
 }
