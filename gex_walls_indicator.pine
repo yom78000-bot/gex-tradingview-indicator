@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 13:41:23
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 13:47:02
 // Données du 2026-03-25 19:55:04
 // Source : Base de données MySQL GEX
 // Symboles supportés : SPY
@@ -78,18 +78,40 @@ plot(vwap_value, title="VWAP", color=color.new(color.yellow, 30), linewidth=2, s
 
 // ==================== DESSIN DES LIGNES ====================
 
-// Fonction pour déterminer la taille du label selon la puissance GEX
-get_label_size(gex_value) =>
+// Fonction pour déterminer l'épaisseur de la ligne selon la puissance GEX
+get_line_width(gex_value) =>
     if gex_value > 80
-        size.huge
+        4
     else if gex_value > 50
-        size.large
+        3
     else if gex_value > 30
-        size.normal
-    else if gex_value > 15
-        size.small
+        2
     else
-        size.tiny
+        1
+
+// Fonction pour déterminer l'opacité de la ligne selon la puissance GEX
+get_line_opacity(gex_value) =>
+    if gex_value > 80
+        60  // Plus visible pour walls très forts
+    else if gex_value > 50
+        65
+    else if gex_value > 30
+        70
+    else
+        75  // Plus transparent pour walls faibles
+
+// Fonction pour ajouter du padding (largeur) au label selon la puissance GEX
+get_label_padding(gex_value) =>
+    if gex_value > 80
+        "━━━━━━━━━━━━━━━━━━━━"  // Très large
+    else if gex_value > 50
+        "━━━━━━━━━━━━━━"  // Large
+    else if gex_value > 30
+        "━━━━━━━━━"  // Moyen
+    else if gex_value > 15
+        "━━━━━"  // Petit
+    else
+        "━━"  // Très petit
 
 // Supprimer les anciennes lignes à chaque mise à jour
 var line[] call_lines = array.new_line()
@@ -104,53 +126,53 @@ if barstate.islast
     array.clear(call_lines)
     array.clear(put_lines)
 
-    // Dessiner les nouvelles lignes UNIQUEMENT si symbole supporté (très fines avec opacité)
+    // Dessiner les nouvelles lignes UNIQUEMENT si symbole supporté (épaisseur et opacité proportionnelles)
     if not na(call_wall_1)
-        // Call Walls - lignes fines transparentes
+        // Call Walls - épaisseur et opacité selon puissance
         if show_call_walls and not na(call_wall_1)
-            array.push(call_lines, line.new(bar_index - 1, call_wall_1, bar_index, call_wall_1, color=color.new(call_color_1, 85), width=1, extend=extend.both))
+            array.push(call_lines, line.new(bar_index - 1, call_wall_1, bar_index, call_wall_1, color=color.new(call_color_1, get_line_opacity(call_gex_1)), width=get_line_width(call_gex_1), extend=extend.both))
         if show_call_walls and not na(call_wall_2)
-            array.push(call_lines, line.new(bar_index - 1, call_wall_2, bar_index, call_wall_2, color=color.new(call_color_2, 85), width=1, extend=extend.both))
+            array.push(call_lines, line.new(bar_index - 1, call_wall_2, bar_index, call_wall_2, color=color.new(call_color_2, get_line_opacity(call_gex_2)), width=get_line_width(call_gex_2), extend=extend.both))
         if show_call_walls and not na(call_wall_3)
-            array.push(call_lines, line.new(bar_index - 1, call_wall_3, bar_index, call_wall_3, color=color.new(call_color_3, 85), width=1, extend=extend.both))
+            array.push(call_lines, line.new(bar_index - 1, call_wall_3, bar_index, call_wall_3, color=color.new(call_color_3, get_line_opacity(call_gex_3)), width=get_line_width(call_gex_3), extend=extend.both))
 
-        // Put Walls - lignes fines transparentes
+        // Put Walls - épaisseur et opacité selon puissance
         if show_put_walls and not na(put_wall_1)
-            array.push(put_lines, line.new(bar_index - 1, put_wall_1, bar_index, put_wall_1, color=color.new(put_color_1, 85), width=1, extend=extend.both))
+            array.push(put_lines, line.new(bar_index - 1, put_wall_1, bar_index, put_wall_1, color=color.new(put_color_1, get_line_opacity(put_gex_1)), width=get_line_width(put_gex_1), extend=extend.both))
         if show_put_walls and not na(put_wall_2)
-            array.push(put_lines, line.new(bar_index - 1, put_wall_2, bar_index, put_wall_2, color=color.new(put_color_2, 85), width=1, extend=extend.both))
+            array.push(put_lines, line.new(bar_index - 1, put_wall_2, bar_index, put_wall_2, color=color.new(put_color_2, get_line_opacity(put_gex_2)), width=get_line_width(put_gex_2), extend=extend.both))
         if show_put_walls and not na(put_wall_3)
-            array.push(put_lines, line.new(bar_index - 1, put_wall_3, bar_index, put_wall_3, color=color.new(put_color_3, 85), width=1, extend=extend.both))
+            array.push(put_lines, line.new(bar_index - 1, put_wall_3, bar_index, put_wall_3, color=color.new(put_color_3, get_line_opacity(put_gex_3)), width=get_line_width(put_gex_3), extend=extend.both))
 
-// Labels proportionnels à la puissance GEX (décalés de 10 barres)
+// Labels compacts (moins hauts) mais plus larges selon puissance GEX (décalés de 10 barres)
 if barstate.islast and show_labels and not na(call_wall_1)
-    // Labels Call Walls - taille proportionnelle à la puissance
+    // Labels Call Walls - hauteur fixe (small), largeur proportionnelle au poids
     if show_call_walls and not na(call_gex_1)
-        label.new(bar_index + 10, call_wall_1, "$" + str.tostring(call_wall_1, "#.##") + " (" + str.tostring(call_gex_1, "#.#") + "M)",
+        label.new(bar_index + 10, call_wall_1, get_label_padding(call_gex_1) + " $" + str.tostring(call_wall_1, "#.##") + " (" + str.tostring(call_gex_1, "#.#") + "M) " + get_label_padding(call_gex_1),
                   color=color.new(call_color_1, 60), textcolor=color.white,
-                  style=label.style_label_down, size=get_label_size(call_gex_1))
+                  style=label.style_label_down, size=size.small)
     if show_call_walls and not na(call_gex_2)
-        label.new(bar_index + 10, call_wall_2, "$" + str.tostring(call_wall_2, "#.##") + " (" + str.tostring(call_gex_2, "#.#") + "M)",
+        label.new(bar_index + 10, call_wall_2, get_label_padding(call_gex_2) + " $" + str.tostring(call_wall_2, "#.##") + " (" + str.tostring(call_gex_2, "#.#") + "M) " + get_label_padding(call_gex_2),
                   color=color.new(call_color_2, 60), textcolor=color.white,
-                  style=label.style_label_down, size=get_label_size(call_gex_2))
+                  style=label.style_label_down, size=size.small)
     if show_call_walls and not na(call_gex_3)
-        label.new(bar_index + 10, call_wall_3, "$" + str.tostring(call_wall_3, "#.##") + " (" + str.tostring(call_gex_3, "#.#") + "M)",
+        label.new(bar_index + 10, call_wall_3, get_label_padding(call_gex_3) + " $" + str.tostring(call_wall_3, "#.##") + " (" + str.tostring(call_gex_3, "#.#") + "M) " + get_label_padding(call_gex_3),
                   color=color.new(call_color_3, 60), textcolor=color.white,
-                  style=label.style_label_down, size=get_label_size(call_gex_3))
+                  style=label.style_label_down, size=size.small)
 
-    // Labels Put Walls - taille proportionnelle à la puissance
+    // Labels Put Walls - hauteur fixe (small), largeur proportionnelle au poids
     if show_put_walls and not na(put_gex_1)
-        label.new(bar_index + 10, put_wall_1, "$" + str.tostring(put_wall_1, "#.##") + " (" + str.tostring(put_gex_1, "#.#") + "M)",
+        label.new(bar_index + 10, put_wall_1, get_label_padding(put_gex_1) + " $" + str.tostring(put_wall_1, "#.##") + " (" + str.tostring(put_gex_1, "#.#") + "M) " + get_label_padding(put_gex_1),
                   color=color.new(put_color_1, 60), textcolor=color.white,
-                  style=label.style_label_up, size=get_label_size(put_gex_1))
+                  style=label.style_label_up, size=size.small)
     if show_put_walls and not na(put_gex_2)
-        label.new(bar_index + 10, put_wall_2, "$" + str.tostring(put_wall_2, "#.##") + " (" + str.tostring(put_gex_2, "#.#") + "M)",
+        label.new(bar_index + 10, put_wall_2, get_label_padding(put_gex_2) + " $" + str.tostring(put_wall_2, "#.##") + " (" + str.tostring(put_gex_2, "#.#") + "M) " + get_label_padding(put_gex_2),
                   color=color.new(put_color_2, 60), textcolor=color.white,
-                  style=label.style_label_up, size=get_label_size(put_gex_2))
+                  style=label.style_label_up, size=size.small)
     if show_put_walls and not na(put_gex_3)
-        label.new(bar_index + 10, put_wall_3, "$" + str.tostring(put_wall_3, "#.##") + " (" + str.tostring(put_gex_3, "#.#") + "M)",
+        label.new(bar_index + 10, put_wall_3, get_label_padding(put_gex_3) + " $" + str.tostring(put_wall_3, "#.##") + " (" + str.tostring(put_gex_3, "#.#") + "M) " + get_label_padding(put_gex_3),
                   color=color.new(put_color_3, 60), textcolor=color.white,
-                  style=label.style_label_up, size=get_label_size(put_gex_3))
+                  style=label.style_label_up, size=size.small)
 
 // Message si symbole non supporté
 if barstate.islast and na(call_wall_1)
