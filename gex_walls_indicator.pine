@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:31:50
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:37:15
 // Données du 2026-03-25 19:55:04
 // Source : Base de données MySQL GEX
 // Symboles supportés : SPY
@@ -57,7 +57,7 @@ put_wall_3 = current_symbol == "SPY" ? spy_put_wall_3 : na
 // Fonction pour créer une ligne horizontale
 draw_hline(price, col, style, label_text) =>
     line_extend = extend_lines == "right" ? extend.right : extend_lines == "both" ? extend.both : extend.none
-    line.new(bar_index, price, bar_index, price,
+    line.new(bar_index - 1, price, bar_index, price,
              color=col, width=2, style=style, extend=line_extend)
 
     if show_labels
