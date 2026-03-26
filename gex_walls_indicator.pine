@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 14:26:46
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 14:42:40
 // Données du 2026-03-26 14:19:44
 // Source : Base de données MySQL GEX
 // Symboles supportés : AAPL, AMZN, DIA, IBIT, QQQ, SPY
@@ -284,14 +284,14 @@ if barstate.islast
         if show_put_walls and not na(put_wall_3)
             array.push(put_lines, line.new(bar_index - 1, put_wall_3, bar_index, put_wall_3, color=color.new(put_color_3, get_line_opacity(put_gex_3)), width=get_line_width(put_gex_3), extend=extend.both))
 
-    // Point Pivot (Gamma Flip Level) - Entre Call Wall #1 et Put Wall #1
+    // Gamma Flip (Zero Gamma Level) - Entre Call Wall #1 et Put Wall #1
     if not na(call_wall_1) and not na(put_wall_1)
-        pivot_level = (call_wall_1 + put_wall_1) / 2
-        array.push(call_lines, line.new(bar_index - 1, pivot_level, bar_index, pivot_level,
+        gamma_flip = (call_wall_1 + put_wall_1) / 2
+        array.push(call_lines, line.new(bar_index - 1, gamma_flip, bar_index, gamma_flip,
                   color=color.new(color.orange, 50), width=2, extend=extend.both, style=line.style_dashed))
 
         if show_labels
-            array.push(call_labels, label.new(bar_index + 20, pivot_level, " PIVOT $" + str.tostring(pivot_level, "#.##") + " ━━━━━━━━━━",
+            array.push(call_labels, label.new(bar_index + 20, gamma_flip, " GAMMA FLIP $" + str.tostring(gamma_flip, "#.##") + " ━━━━━━━━━━",
                       color=color.new(color.orange, 40), textcolor=color.white,
                       style=label.style_label_left, size=size.normal))
 

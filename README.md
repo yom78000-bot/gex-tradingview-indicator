@@ -7,7 +7,7 @@ Indicateur TradingView universel affichant les niveaux de Gamma Exposure (GEX) p
 - **Multi-symboles** : Détection automatique du symbole du graphique
 - **Mise à jour automatique** : Calculs GEX toutes les 5 minutes pendant les heures de marché
 - **6 niveaux GEX** : Top 3 Call Walls (résistances) + Top 3 Put Walls (supports)
-- **Point Pivot (Gamma Flip)** : Niveau de bascule entre gamma positif et négatif
+- **Gamma Flip (Zero Gamma)** : Niveau de bascule entre gamma positif et négatif
 - **Zone de stabilité** : Visualisation de la zone entre Call Wall #1 et Put Wall #1
 - **Paramètres personnalisables** : Couleurs, labels, extension des lignes
 
@@ -41,11 +41,11 @@ L'indicateur détecte automatiquement le symbole du graphique :
   - Prix au-dessus → Pression baissière potentielle
 - **Put Walls (vert)** : Niveaux de support créés par le Gamma Exposure négatif
   - Prix en-dessous → Pression haussière potentielle
-- **Point Pivot (orange pointillé)** : Niveau de bascule du gamma (Gamma Flip Level)
+- **Gamma Flip (orange pointillé)** : Niveau de gamma zéro (Zero Gamma Level)
   - Calculé comme la moyenne entre Call Wall #1 et Put Wall #1
-  - Prix au-dessus → Market makers vendent des contrats (pression baissière)
-  - Prix en-dessous → Market makers achètent des contrats (pression haussière)
-  - Zone critique pour la direction du marché
+  - Prix au-dessus du Gamma Flip → Dealers sont short gamma (volatilité amplifiée)
+  - Prix en-dessous du Gamma Flip → Dealers sont long gamma (volatilité amortie)
+  - Point critique où le gamma des market makers passe de positif à négatif
 - **Zone de stabilité (gris)** : Zone entre Call Wall #1 et Put Wall #1
   - Prix dans la zone → Marché équilibré
 
@@ -84,7 +84,7 @@ Pour bénéficier des mises à jour, remplacer le code dans Pine Editor par la d
 - **Call Wall #1** : $660.00 (GEX: 19.7M)
 - **Call Wall #2** : $666.00 (GEX: 6.5M)
 - **Call Wall #3** : $659.00 (GEX: 6.1M)
-- **🔶 PIVOT** : $657.50 (Gamma Flip Level)
+- **🔶 GAMMA FLIP** : $657.50 (Zero Gamma Level)
 - **Put Wall #1** : $655.00 (GEX: -94.2M) ⚠️ Support majeur
 - **Put Wall #2** : $650.00 (GEX: -57.9M)
 - **Put Wall #3** : $645.00 (GEX: -11.6M)

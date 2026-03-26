@@ -1,5 +1,5 @@
 {
-  "version": "2026-03-26T14:28:23Z",
+  "version": "2026-03-26T14:42:45Z",
   "symbols": [
     "AAPL",
     "AMZN",
@@ -44,7 +44,7 @@
         "gex": -15000000
       }
     ],
-    "pivot_level": 255.0,
+    "gamma_flip": 255.0,
     "last_update": "2026-03-26T14:19:44Z"
   },
   "amzn": {
@@ -83,7 +83,7 @@
         "gex": -18000000
       }
     ],
-    "pivot_level": 212.5,
+    "gamma_flip": 212.5,
     "last_update": "2026-03-26T14:19:44Z"
   },
   "dia": {
@@ -122,7 +122,7 @@
         "gex": -10000000
       }
     ],
-    "pivot_level": 465.0,
+    "gamma_flip": 465.0,
     "last_update": "2026-03-26T14:19:44Z"
   },
   "ibit": {
@@ -161,7 +161,7 @@
         "gex": -5000000
       }
     ],
-    "pivot_level": 39.0,
+    "gamma_flip": 39.0,
     "last_update": "2026-03-26T14:19:44Z"
   },
   "qqq": {
@@ -200,7 +200,7 @@
         "gex": -20000000
       }
     ],
-    "pivot_level": 585.0,
+    "gamma_flip": 585.0,
     "last_update": "2026-03-26T14:19:44Z"
   },
   "spy": {
@@ -239,7 +239,7 @@
         "gex": -11585249
       }
     ],
-    "pivot_level": 657.5,
+    "gamma_flip": 657.5,
     "last_update": "2026-03-25T19:55:04Z"
   }
 }
