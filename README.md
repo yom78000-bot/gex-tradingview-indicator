@@ -7,13 +7,18 @@ Indicateur TradingView universel affichant les niveaux de Gamma Exposure (GEX) p
 - **Multi-symboles** : Détection automatique du symbole du graphique
 - **Mise à jour automatique** : Calculs GEX toutes les 5 minutes pendant les heures de marché
 - **6 niveaux GEX** : Top 3 Call Walls (résistances) + Top 3 Put Walls (supports)
+- **Point Pivot (Gamma Flip)** : Niveau de bascule entre gamma positif et négatif
 - **Zone de stabilité** : Visualisation de la zone entre Call Wall #1 et Put Wall #1
 - **Paramètres personnalisables** : Couleurs, labels, extension des lignes
 
 ## 📊 Symboles supportés
 
 - **SPY** - S&P 500 ETF
-- *(D'autres symboles seront ajoutés prochainement : QQQ, AAPL, TSLA, NVDA, IWM, DIA)*
+- **QQQ** - Nasdaq 100 ETF
+- **AAPL** - Apple Inc.
+- **AMZN** - Amazon.com Inc.
+- **DIA** - Dow Jones Industrial Average ETF
+- **IBIT** - iShares Bitcoin Trust ETF
 
 ## 🔧 Installation
 
@@ -36,6 +41,11 @@ L'indicateur détecte automatiquement le symbole du graphique :
   - Prix au-dessus → Pression baissière potentielle
 - **Put Walls (vert)** : Niveaux de support créés par le Gamma Exposure négatif
   - Prix en-dessous → Pression haussière potentielle
+- **Point Pivot (orange pointillé)** : Niveau de bascule du gamma (Gamma Flip Level)
+  - Calculé comme la moyenne entre Call Wall #1 et Put Wall #1
+  - Prix au-dessus → Market makers vendent des contrats (pression baissière)
+  - Prix en-dessous → Market makers achètent des contrats (pression haussière)
+  - Zone critique pour la direction du marché
 - **Zone de stabilité (gris)** : Zone entre Call Wall #1 et Put Wall #1
   - Prix dans la zone → Marché équilibré
 
@@ -74,6 +84,7 @@ Pour bénéficier des mises à jour, remplacer le code dans Pine Editor par la d
 - **Call Wall #1** : $660.00 (GEX: 19.7M)
 - **Call Wall #2** : $666.00 (GEX: 6.5M)
 - **Call Wall #3** : $659.00 (GEX: 6.1M)
+- **🔶 PIVOT** : $657.50 (Gamma Flip Level)
 - **Put Wall #1** : $655.00 (GEX: -94.2M) ⚠️ Support majeur
 - **Put Wall #2** : $650.00 (GEX: -57.9M)
 - **Put Wall #3** : $645.00 (GEX: -11.6M)
@@ -95,4 +106,4 @@ MIT License - Utilisation libre avec attribution
 ---
 
 **Généré automatiquement** par le système GEX Auto-Update
-**Dernière mise à jour** : 2026-03-26 12:21 UTC
+**Dernière mise à jour** : 2026-03-26 13:45 UTC
