@@ -1,5 +1,5 @@
-// GEX Walls Indicator (Multi-Symbol + Multi-Expiration) - Auto-généré le 2026-03-26 15:24:36
-// Données du 2026-03-26 15:24:26
+// GEX Walls Indicator (Multi-Symbol + Multi-Expiration) - Auto-généré le 2026-03-26 15:42:17
+// Données du 2026-03-26 15:41:40
 // Source : Base de données MySQL GEX
 // Symboles supportés : AAPL, AMZN, DIA, IBIT, QQQ, SPY
 // Expirations : 0DTE, Weekly, Monthly
@@ -37,322 +37,526 @@ current_symbol := str.replace(current_symbol, "BATS:", "")
 // Expirations: 0dte, weekly, monthly
 
 
-// AAPL - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float aapl_week1_call_wall_1 = 257.50  // GEX: 4,781,181
-var float aapl_week1_call_gex_1 = 4.8
-var float aapl_week1_call_wall_2 = 260.00  // GEX: 3,188,965
-var float aapl_week1_call_gex_2 = 3.2
-var float aapl_week1_call_wall_3 = 252.50  // GEX: 1,101,647
-var float aapl_week1_call_gex_3 = 1.1
-var float aapl_week1_put_wall_1 = 250.00  // GEX: -1,784,553
-var float aapl_week1_put_gex_1 = 1.8
+// AAPL - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float aapl_0dte_call_wall_1 = 257.50  // GEX: 43,074,751
+var float aapl_0dte_call_gex_1 = 43.1
+var float aapl_0dte_call_wall_2 = 260.00  // GEX: 34,563,634
+var float aapl_0dte_call_gex_2 = 34.6
+var float aapl_0dte_call_wall_3 = 255.00  // GEX: 25,976,594
+var float aapl_0dte_call_gex_3 = 26.0
+var float aapl_0dte_put_wall_1 = 250.00  // GEX: -5,846
+var float aapl_0dte_put_gex_1 = 0.0
+var float aapl_0dte_put_wall_2 = 247.50  // GEX: -337
+var float aapl_0dte_put_gex_2 = 0.0
+var float aapl_0dte_put_wall_3 = 245.00  // GEX: 0
+var float aapl_0dte_put_gex_3 = 0.0
+
+// AAPL - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float aapl_week1_call_wall_1 = 257.50  // GEX: 43,074,751
+var float aapl_week1_call_gex_1 = 43.1
+var float aapl_week1_call_wall_2 = 260.00  // GEX: 34,563,634
+var float aapl_week1_call_gex_2 = 34.6
+var float aapl_week1_call_wall_3 = 255.00  // GEX: 25,976,594
+var float aapl_week1_call_gex_3 = 26.0
+var float aapl_week1_put_wall_1 = 250.00  // GEX: -5,846
+var float aapl_week1_put_gex_1 = 0.0
+var float aapl_week1_put_wall_2 = 247.50  // GEX: -337
+var float aapl_week1_put_gex_2 = 0.0
+var float aapl_week1_put_wall_3 = 245.00  // GEX: 0
+var float aapl_week1_put_gex_3 = 0.0
 
 // AAPL - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float aapl_week2_call_wall_1 = 260.00  // GEX: 1,595,373
-var float aapl_week2_call_gex_1 = 1.6
-var float aapl_week2_call_wall_2 = 255.00  // GEX: 508,487
-var float aapl_week2_call_gex_2 = 0.5
-var float aapl_week2_call_wall_3 = 250.00  // GEX: 445,443
-var float aapl_week2_call_gex_3 = 0.4
+var float aapl_week2_call_wall_1 = 265.00  // GEX: 6,029,036
+var float aapl_week2_call_gex_1 = 6.0
+var float aapl_week2_call_wall_2 = 270.00  // GEX: 2,092,626
+var float aapl_week2_call_gex_2 = 2.1
+var float aapl_week2_call_wall_3 = 260.00  // GEX: 1,646,128
+var float aapl_week2_call_gex_3 = 1.6
+var float aapl_week2_put_wall_1 = 245.00  // GEX: -222,497
+var float aapl_week2_put_gex_1 = 0.2
+var float aapl_week2_put_wall_2 = 240.00  // GEX: -63,977
+var float aapl_week2_put_gex_2 = 0.1
+var float aapl_week2_put_wall_3 = 235.00  // GEX: -3,031
+var float aapl_week2_put_gex_3 = 0.0
 
 // AAPL - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float aapl_month1_call_wall_1 = 260.00  // GEX: 3,560,064
-var float aapl_month1_call_gex_1 = 3.6
-var float aapl_month1_call_wall_2 = 255.00  // GEX: 47,981
-var float aapl_month1_call_gex_2 = 0.0
-var float aapl_month1_call_wall_3 = 250.00  // GEX: 12,201
-var float aapl_month1_call_gex_3 = 0.0
+var float aapl_month1_call_wall_1 = 265.00  // GEX: 4,619,051
+var float aapl_month1_call_gex_1 = 4.6
+var float aapl_month1_call_wall_2 = 260.00  // GEX: 3,606,125
+var float aapl_month1_call_gex_2 = 3.6
+var float aapl_month1_call_wall_3 = 270.00  // GEX: 1,491,184
+var float aapl_month1_call_gex_3 = 1.5
+var float aapl_month1_put_wall_1 = 245.00  // GEX: -349,803
+var float aapl_month1_put_gex_1 = 0.3
+var float aapl_month1_put_wall_2 = 240.00  // GEX: -93,030
+var float aapl_month1_put_gex_2 = 0.1
+var float aapl_month1_put_wall_3 = 235.00  // GEX: -45,436
+var float aapl_month1_put_gex_3 = 0.0
 
-// AMZN - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float amzn_week1_call_wall_1 = 215.00  // GEX: 9,252,752
-var float amzn_week1_call_gex_1 = 9.3
-var float amzn_week1_call_wall_2 = 212.50  // GEX: 2,552,242
-var float amzn_week1_call_gex_2 = 2.6
-var float amzn_week1_call_wall_3 = 210.00  // GEX: 1,670,595
-var float amzn_week1_call_gex_3 = 1.7
-var float amzn_week1_put_wall_1 = 207.50  // GEX: -277,993
-var float amzn_week1_put_gex_1 = 0.3
+// AMZN - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float amzn_0dte_call_wall_1 = 212.50  // GEX: 37,876,086
+var float amzn_0dte_call_gex_1 = 37.9
+var float amzn_0dte_call_wall_2 = 210.00  // GEX: 21,520,476
+var float amzn_0dte_call_gex_2 = 21.5
+var float amzn_0dte_call_wall_3 = 215.00  // GEX: 20,323,827
+var float amzn_0dte_call_gex_3 = 20.3
+var float amzn_0dte_put_wall_1 = 205.00  // GEX: -1,141
+var float amzn_0dte_put_gex_1 = 0.0
+var float amzn_0dte_put_wall_2 = 202.50  // GEX: 0
+var float amzn_0dte_put_gex_2 = 0.0
+var float amzn_0dte_put_wall_3 = 200.00  // GEX: 0
+var float amzn_0dte_put_gex_3 = 0.0
+
+// AMZN - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float amzn_week1_call_wall_1 = 212.50  // GEX: 37,876,086
+var float amzn_week1_call_gex_1 = 37.9
+var float amzn_week1_call_wall_2 = 210.00  // GEX: 21,520,476
+var float amzn_week1_call_gex_2 = 21.5
+var float amzn_week1_call_wall_3 = 215.00  // GEX: 20,323,827
+var float amzn_week1_call_gex_3 = 20.3
+var float amzn_week1_put_wall_1 = 205.00  // GEX: -1,141
+var float amzn_week1_put_gex_1 = 0.0
+var float amzn_week1_put_wall_2 = 202.50  // GEX: 0
+var float amzn_week1_put_gex_2 = 0.0
+var float amzn_week1_put_wall_3 = 200.00  // GEX: 0
+var float amzn_week1_put_gex_3 = 0.0
 
 // AMZN - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float amzn_week2_call_wall_1 = 215.00  // GEX: 3,132,056
-var float amzn_week2_call_gex_1 = 3.1
-var float amzn_week2_call_wall_2 = 210.00  // GEX: 1,814,155
-var float amzn_week2_call_gex_2 = 1.8
+var float amzn_week2_call_wall_1 = 220.00  // GEX: 7,039,476
+var float amzn_week2_call_gex_1 = 7.0
+var float amzn_week2_call_wall_2 = 215.00  // GEX: 3,176,295
+var float amzn_week2_call_gex_2 = 3.2
+var float amzn_week2_call_wall_3 = 210.00  // GEX: 1,787,331
+var float amzn_week2_call_gex_3 = 1.8
+var float amzn_week2_put_wall_1 = 200.00  // GEX: -215,238
+var float amzn_week2_put_gex_1 = 0.2
+var float amzn_week2_put_wall_2 = 205.00  // GEX: -146,567
+var float amzn_week2_put_gex_2 = 0.1
+var float amzn_week2_put_wall_3 = 195.00  // GEX: -91,027
+var float amzn_week2_put_gex_3 = 0.1
 
 // AMZN - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float amzn_month1_call_wall_1 = 215.00  // GEX: 758,402
-var float amzn_month1_call_gex_1 = 0.8
-var float amzn_month1_call_wall_2 = 210.00  // GEX: 372,731
-var float amzn_month1_call_gex_2 = 0.4
+var float amzn_month1_call_wall_1 = 225.00  // GEX: 959,484
+var float amzn_month1_call_gex_1 = 1.0
+var float amzn_month1_call_wall_2 = 220.00  // GEX: 861,081
+var float amzn_month1_call_gex_2 = 0.9
+var float amzn_month1_call_wall_3 = 230.00  // GEX: 825,915
+var float amzn_month1_call_gex_3 = 0.8
+var float amzn_month1_put_wall_1 = 205.00  // GEX: -130,071
+var float amzn_month1_put_gex_1 = 0.1
+var float amzn_month1_put_wall_2 = 195.00  // GEX: -51,332
+var float amzn_month1_put_gex_2 = 0.1
 
-// DIA - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float dia_week1_call_wall_1 = 470.00  // GEX: 398,941
-var float dia_week1_call_gex_1 = 0.4
-var float dia_week1_call_wall_2 = 469.00  // GEX: 319,636
-var float dia_week1_call_gex_2 = 0.3
-var float dia_week1_call_wall_3 = 474.00  // GEX: 254,685
-var float dia_week1_call_gex_3 = 0.3
-var float dia_week1_put_wall_1 = 458.00  // GEX: -609,155
-var float dia_week1_put_gex_1 = 0.6
-var float dia_week1_put_wall_2 = 459.00  // GEX: -587,358
-var float dia_week1_put_gex_2 = 0.6
-var float dia_week1_put_wall_3 = 455.00  // GEX: -490,933
-var float dia_week1_put_gex_3 = 0.5
+// DIA - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float dia_0dte_call_wall_1 = 465.00  // GEX: 2,687,937
+var float dia_0dte_call_gex_1 = 2.7
+var float dia_0dte_call_wall_2 = 467.00  // GEX: 1,170,623
+var float dia_0dte_call_gex_2 = 1.2
+var float dia_0dte_call_wall_3 = 470.00  // GEX: 245,317
+var float dia_0dte_call_gex_3 = 0.2
+var float dia_0dte_put_wall_1 = 460.00  // GEX: -1,506,790
+var float dia_0dte_put_gex_1 = 1.5
+var float dia_0dte_put_wall_2 = 463.00  // GEX: -1,403,275
+var float dia_0dte_put_gex_2 = 1.4
+var float dia_0dte_put_wall_3 = 464.00  // GEX: -1,327,233
+var float dia_0dte_put_gex_3 = 1.3
+
+// DIA - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float dia_week1_call_wall_1 = 465.00  // GEX: 2,687,937
+var float dia_week1_call_gex_1 = 2.7
+var float dia_week1_call_wall_2 = 467.00  // GEX: 1,170,623
+var float dia_week1_call_gex_2 = 1.2
+var float dia_week1_call_wall_3 = 470.00  // GEX: 245,317
+var float dia_week1_call_gex_3 = 0.2
+var float dia_week1_put_wall_1 = 460.00  // GEX: -1,506,790
+var float dia_week1_put_gex_1 = 1.5
+var float dia_week1_put_wall_2 = 463.00  // GEX: -1,403,275
+var float dia_week1_put_gex_2 = 1.4
+var float dia_week1_put_wall_3 = 464.00  // GEX: -1,327,233
+var float dia_week1_put_gex_3 = 1.3
 
 // DIA - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float dia_week2_call_wall_1 = 461.00  // GEX: 525,539
+var float dia_week2_call_wall_1 = 461.00  // GEX: 530,710
 var float dia_week2_call_gex_1 = 0.5
-var float dia_week2_call_wall_2 = 470.00  // GEX: 357,466
-var float dia_week2_call_gex_2 = 0.4
-var float dia_week2_call_wall_3 = 467.00  // GEX: 61,051
-var float dia_week2_call_gex_3 = 0.1
-var float dia_week2_put_wall_1 = 455.00  // GEX: -268,734
-var float dia_week2_put_gex_1 = 0.3
-var float dia_week2_put_wall_2 = 457.00  // GEX: -210,870
-var float dia_week2_put_gex_2 = 0.2
-var float dia_week2_put_wall_3 = 460.00  // GEX: -136,321
-var float dia_week2_put_gex_3 = 0.1
+var float dia_week2_call_wall_2 = 470.00  // GEX: 349,631
+var float dia_week2_call_gex_2 = 0.3
+var float dia_week2_call_wall_3 = 475.00  // GEX: 168,772
+var float dia_week2_call_gex_3 = 0.2
+var float dia_week2_put_wall_1 = 450.00  // GEX: -832,338
+var float dia_week2_put_gex_1 = 0.8
+var float dia_week2_put_wall_2 = 455.00  // GEX: -277,318
+var float dia_week2_put_gex_2 = 0.3
+var float dia_week2_put_wall_3 = 457.00  // GEX: -216,034
+var float dia_week2_put_gex_3 = 0.2
 
 // DIA - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float dia_month1_call_wall_1 = 471.00  // GEX: 195,248
+var float dia_month1_call_wall_1 = 471.00  // GEX: 193,101
 var float dia_month1_call_gex_1 = 0.2
-var float dia_month1_call_wall_2 = 456.00  // GEX: 129,579
+var float dia_month1_call_wall_2 = 456.00  // GEX: 131,628
 var float dia_month1_call_gex_2 = 0.1
-var float dia_month1_call_wall_3 = 453.00  // GEX: 115,524
+var float dia_month1_call_wall_3 = 475.00  // GEX: 121,826
 var float dia_month1_call_gex_3 = 0.1
-var float dia_month1_put_wall_1 = 470.00  // GEX: -142,266
+var float dia_month1_put_wall_1 = 470.00  // GEX: -140,949
 var float dia_month1_put_gex_1 = 0.1
-var float dia_month1_put_wall_2 = 465.00  // GEX: -104,666
+var float dia_month1_put_wall_2 = 465.00  // GEX: -104,618
 var float dia_month1_put_gex_2 = 0.1
-var float dia_month1_put_wall_3 = 455.00  // GEX: -73,544
+var float dia_month1_put_wall_3 = 450.00  // GEX: -82,812
 var float dia_month1_put_gex_3 = 0.1
 
-// IBIT - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float ibit_week1_call_wall_1 = 40.00  // GEX: 1,413,638
-var float ibit_week1_call_gex_1 = 1.4
-var float ibit_week1_put_wall_1 = 39.00  // GEX: -4,041,430
-var float ibit_week1_put_gex_1 = 4.0
-var float ibit_week1_put_wall_2 = 39.50  // GEX: -1,573,735
-var float ibit_week1_put_gex_2 = 1.6
-var float ibit_week1_put_wall_3 = 38.50  // GEX: -998,698
-var float ibit_week1_put_gex_3 = 1.0
+// IBIT - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float ibit_0dte_call_wall_1 = 40.00  // GEX: 187,403
+var float ibit_0dte_call_gex_1 = 0.2
+var float ibit_0dte_call_wall_2 = 40.50  // GEX: 1,493
+var float ibit_0dte_call_gex_2 = 0.0
+var float ibit_0dte_call_wall_3 = 41.00  // GEX: 0
+var float ibit_0dte_call_gex_3 = 0.0
+var float ibit_0dte_put_wall_1 = 39.00  // GEX: -11,964,850
+var float ibit_0dte_put_gex_1 = 12.0
+var float ibit_0dte_put_wall_2 = 38.50  // GEX: -3,084,379
+var float ibit_0dte_put_gex_2 = 3.1
+var float ibit_0dte_put_wall_3 = 39.50  // GEX: -2,094,902
+var float ibit_0dte_put_gex_3 = 2.1
+
+// IBIT - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float ibit_week1_call_wall_1 = 40.00  // GEX: 187,403
+var float ibit_week1_call_gex_1 = 0.2
+var float ibit_week1_call_wall_2 = 40.50  // GEX: 1,493
+var float ibit_week1_call_gex_2 = 0.0
+var float ibit_week1_call_wall_3 = 41.00  // GEX: 0
+var float ibit_week1_call_gex_3 = 0.0
+var float ibit_week1_put_wall_1 = 39.00  // GEX: -11,964,850
+var float ibit_week1_put_gex_1 = 12.0
+var float ibit_week1_put_wall_2 = 38.50  // GEX: -3,084,379
+var float ibit_week1_put_gex_2 = 3.1
+var float ibit_week1_put_wall_3 = 39.50  // GEX: -2,094,902
+var float ibit_week1_put_gex_3 = 2.1
 
 // IBIT - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float ibit_week2_put_wall_1 = 39.00  // GEX: -6,689,686
+var float ibit_week2_call_wall_1 = 41.00  // GEX: 559,983
+var float ibit_week2_call_gex_1 = 0.6
+var float ibit_week2_call_wall_2 = 42.00  // GEX: 484,160
+var float ibit_week2_call_gex_2 = 0.5
+var float ibit_week2_call_wall_3 = 41.50  // GEX: 223,933
+var float ibit_week2_call_gex_3 = 0.2
+var float ibit_week2_put_wall_1 = 39.00  // GEX: -6,689,608
 var float ibit_week2_put_gex_1 = 6.7
-var float ibit_week2_put_wall_2 = 38.50  // GEX: -1,225,246
-var float ibit_week2_put_gex_2 = 1.2
-var float ibit_week2_put_wall_3 = 40.00  // GEX: -750,210
-var float ibit_week2_put_gex_3 = 0.8
+var float ibit_week2_put_wall_2 = 40.50  // GEX: -2,401,880
+var float ibit_week2_put_gex_2 = 2.4
+var float ibit_week2_put_wall_3 = 38.50  // GEX: -1,225,183
+var float ibit_week2_put_gex_3 = 1.2
 
 // IBIT - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float ibit_month1_put_wall_1 = 40.00  // GEX: -2,879,707
-var float ibit_month1_put_gex_1 = 2.9
-var float ibit_month1_put_wall_2 = 39.00  // GEX: -1,171,790
-var float ibit_month1_put_gex_2 = 1.2
-var float ibit_month1_put_wall_3 = 39.50  // GEX: -361,047
-var float ibit_month1_put_gex_3 = 0.4
+var float ibit_month1_call_wall_1 = 41.00  // GEX: 472,638
+var float ibit_month1_call_gex_1 = 0.5
+var float ibit_month1_call_wall_2 = 42.50  // GEX: 429,566
+var float ibit_month1_call_gex_2 = 0.4
+var float ibit_month1_call_wall_3 = 42.00  // GEX: 384,004
+var float ibit_month1_call_gex_3 = 0.4
+var float ibit_month1_put_wall_1 = 38.00  // GEX: -6,981,064
+var float ibit_month1_put_gex_1 = 7.0
+var float ibit_month1_put_wall_2 = 40.00  // GEX: -2,879,792
+var float ibit_month1_put_gex_2 = 2.9
+var float ibit_month1_put_wall_3 = 37.00  // GEX: -2,249,740
+var float ibit_month1_put_gex_3 = 2.2
 
-// QQQ - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float qqq_week1_call_wall_1 = 589.00  // GEX: 2,602,651
-var float qqq_week1_call_gex_1 = 2.6
-var float qqq_week1_call_wall_2 = 593.00  // GEX: 534,931
+// QQQ - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float qqq_0dte_call_wall_1 = 592.00  // GEX: 833,051
+var float qqq_0dte_call_gex_1 = 0.8
+var float qqq_0dte_call_wall_2 = 591.00  // GEX: 450,684
+var float qqq_0dte_call_gex_2 = 0.5
+var float qqq_0dte_call_wall_3 = 593.00  // GEX: 269,526
+var float qqq_0dte_call_gex_3 = 0.3
+var float qqq_0dte_put_wall_1 = 575.00  // GEX: -68,004,952
+var float qqq_0dte_put_gex_1 = 68.0
+var float qqq_0dte_put_wall_2 = 580.00  // GEX: -49,586,713
+var float qqq_0dte_put_gex_2 = 49.6
+var float qqq_0dte_put_wall_3 = 581.00  // GEX: -20,177,672
+var float qqq_0dte_put_gex_3 = 20.2
+
+// QQQ - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float qqq_week1_call_wall_1 = 592.00  // GEX: 833,051
+var float qqq_week1_call_gex_1 = 0.8
+var float qqq_week1_call_wall_2 = 591.00  // GEX: 450,684
 var float qqq_week1_call_gex_2 = 0.5
-var float qqq_week1_call_wall_3 = 585.00  // GEX: 348,010
+var float qqq_week1_call_wall_3 = 593.00  // GEX: 269,526
 var float qqq_week1_call_gex_3 = 0.3
-var float qqq_week1_put_wall_1 = 590.00  // GEX: -13,533,966
-var float qqq_week1_put_gex_1 = 13.5
-var float qqq_week1_put_wall_2 = 580.00  // GEX: -10,450,074
-var float qqq_week1_put_gex_2 = 10.5
-var float qqq_week1_put_wall_3 = 575.00  // GEX: -9,481,556
-var float qqq_week1_put_gex_3 = 9.5
+var float qqq_week1_put_wall_1 = 575.00  // GEX: -68,004,952
+var float qqq_week1_put_gex_1 = 68.0
+var float qqq_week1_put_wall_2 = 580.00  // GEX: -49,586,713
+var float qqq_week1_put_gex_2 = 49.6
+var float qqq_week1_put_wall_3 = 581.00  // GEX: -20,177,672
+var float qqq_week1_put_gex_3 = 20.2
 
 // QQQ - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float qqq_week2_call_wall_1 = 593.00  // GEX: 81,645
-var float qqq_week2_call_gex_1 = 0.1
-var float qqq_week2_call_wall_2 = 594.00  // GEX: 67,875
-var float qqq_week2_call_gex_2 = 0.1
-var float qqq_week2_put_wall_1 = 590.00  // GEX: -12,792,876
+var float qqq_week2_call_wall_1 = 608.00  // GEX: 3,778,648
+var float qqq_week2_call_gex_1 = 3.8
+var float qqq_week2_call_wall_2 = 596.00  // GEX: 628,367
+var float qqq_week2_call_gex_2 = 0.6
+var float qqq_week2_call_wall_3 = 614.00  // GEX: 453,680
+var float qqq_week2_call_gex_3 = 0.5
+var float qqq_week2_put_wall_1 = 590.00  // GEX: -12,799,627
 var float qqq_week2_put_gex_1 = 12.8
-var float qqq_week2_put_wall_2 = 580.00  // GEX: -5,624,901
+var float qqq_week2_put_wall_2 = 580.00  // GEX: -5,624,030
 var float qqq_week2_put_gex_2 = 5.6
-var float qqq_week2_put_wall_3 = 570.00  // GEX: -2,436,538
+var float qqq_week2_put_wall_3 = 570.00  // GEX: -2,434,470
 var float qqq_week2_put_gex_3 = 2.4
 
 // QQQ - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float qqq_month1_call_wall_1 = 590.00  // GEX: 304,897
-var float qqq_month1_call_gex_1 = 0.3
-var float qqq_month1_call_wall_2 = 589.00  // GEX: 200,325
-var float qqq_month1_call_gex_2 = 0.2
-var float qqq_month1_call_wall_3 = 593.00  // GEX: 126,438
-var float qqq_month1_call_gex_3 = 0.1
-var float qqq_month1_put_wall_1 = 580.00  // GEX: -2,734,745
+var float qqq_month1_call_wall_1 = 605.00  // GEX: 676,760
+var float qqq_month1_call_gex_1 = 0.7
+var float qqq_month1_call_wall_2 = 620.00  // GEX: 641,797
+var float qqq_month1_call_gex_2 = 0.6
+var float qqq_month1_call_wall_3 = 630.00  // GEX: 461,784
+var float qqq_month1_call_gex_3 = 0.5
+var float qqq_month1_put_wall_1 = 580.00  // GEX: -2,734,416
 var float qqq_month1_put_gex_1 = 2.7
-var float qqq_month1_put_wall_2 = 570.00  // GEX: -908,570
+var float qqq_month1_put_wall_2 = 570.00  // GEX: -908,145
 var float qqq_month1_put_gex_2 = 0.9
-var float qqq_month1_put_wall_3 = 585.00  // GEX: -892,296
+var float qqq_month1_put_wall_3 = 585.00  // GEX: -892,342
 var float qqq_month1_put_gex_3 = 0.9
 
-// SPY - 1st week (7d) - Exp: 2026-04-02 (6j)
-var float spy_week1_call_wall_1 = 663.00  // GEX: 6,752,567
-var float spy_week1_call_gex_1 = 6.8
-var float spy_week1_call_wall_2 = 656.00  // GEX: 2,178,179
-var float spy_week1_call_gex_2 = 2.2
-var float spy_week1_call_wall_3 = 661.00  // GEX: 1,377,083
-var float spy_week1_call_gex_3 = 1.4
-var float spy_week1_put_wall_1 = 640.00  // GEX: -177,573,538
-var float spy_week1_put_gex_1 = 177.6
-var float spy_week1_put_wall_2 = 650.00  // GEX: -68,805,119
-var float spy_week1_put_gex_2 = 68.8
-var float spy_week1_put_wall_3 = 657.00  // GEX: -44,688,589
-var float spy_week1_put_gex_3 = 44.7
+// SPY - 0DTE (0d) - Exp: 2026-03-27 (0j)
+var float spy_0dte_call_wall_1 = 660.00  // GEX: 8,937,838
+var float spy_0dte_call_gex_1 = 8.9
+var float spy_0dte_call_wall_2 = 659.00  // GEX: 4,871,920
+var float spy_0dte_call_gex_2 = 4.9
+var float spy_0dte_call_wall_3 = 662.00  // GEX: 1,930,946
+var float spy_0dte_call_gex_3 = 1.9
+var float spy_0dte_put_wall_1 = 650.00  // GEX: -154,677,772
+var float spy_0dte_put_gex_1 = 154.7
+var float spy_0dte_put_wall_2 = 645.00  // GEX: -73,360,760
+var float spy_0dte_put_gex_2 = 73.4
+var float spy_0dte_put_wall_3 = 655.00  // GEX: -63,642,871
+var float spy_0dte_put_gex_3 = 63.6
+
+// SPY - 1st week (7d) - Exp: 2026-03-27 (0j)
+var float spy_week1_call_wall_1 = 660.00  // GEX: 8,937,838
+var float spy_week1_call_gex_1 = 8.9
+var float spy_week1_call_wall_2 = 659.00  // GEX: 4,871,920
+var float spy_week1_call_gex_2 = 4.9
+var float spy_week1_call_wall_3 = 662.00  // GEX: 1,930,946
+var float spy_week1_call_gex_3 = 1.9
+var float spy_week1_put_wall_1 = 650.00  // GEX: -154,677,772
+var float spy_week1_put_gex_1 = 154.7
+var float spy_week1_put_wall_2 = 645.00  // GEX: -73,360,760
+var float spy_week1_put_gex_2 = 73.4
+var float spy_week1_put_wall_3 = 655.00  // GEX: -63,642,871
+var float spy_week1_put_gex_3 = 63.6
 
 // SPY - 2nd week (14d) - Exp: 2026-04-10 (14j)
-var float spy_week2_call_wall_1 = 668.00  // GEX: 2,000,272
+var float spy_week2_call_wall_1 = 668.00  // GEX: 1,971,851
 var float spy_week2_call_gex_1 = 2.0
-var float spy_week2_call_wall_2 = 664.00  // GEX: 983,190
-var float spy_week2_call_gex_2 = 1.0
-var float spy_week2_call_wall_3 = 662.00  // GEX: 886,946
-var float spy_week2_call_gex_3 = 0.9
-var float spy_week2_put_wall_1 = 640.00  // GEX: -29,561,484
-var float spy_week2_put_gex_1 = 29.6
-var float spy_week2_put_wall_2 = 660.00  // GEX: -9,051,552
-var float spy_week2_put_gex_2 = 9.1
-var float spy_week2_put_wall_3 = 646.00  // GEX: -8,341,443
-var float spy_week2_put_gex_3 = 8.3
+var float spy_week2_call_wall_2 = 675.00  // GEX: 1,885,033
+var float spy_week2_call_gex_2 = 1.9
+var float spy_week2_call_wall_3 = 685.00  // GEX: 1,086,455
+var float spy_week2_call_gex_3 = 1.1
+var float spy_week2_put_wall_1 = 640.00  // GEX: -29,951,040
+var float spy_week2_put_gex_1 = 30.0
+var float spy_week2_put_wall_2 = 660.00  // GEX: -8,992,006
+var float spy_week2_put_gex_2 = 9.0
+var float spy_week2_put_wall_3 = 646.00  // GEX: -8,401,048
+var float spy_week2_put_gex_3 = 8.4
 
 // SPY - 1st month (30d) - Exp: 2026-04-24 (28j)
-var float spy_month1_call_wall_1 = 657.00  // GEX: 2,961,530
+var float spy_month1_call_wall_1 = 657.00  // GEX: 2,958,120
 var float spy_month1_call_gex_1 = 3.0
-var float spy_month1_call_wall_2 = 655.00  // GEX: 1,436,508
-var float spy_month1_call_gex_2 = 1.4
-var float spy_month1_call_wall_3 = 660.00  // GEX: 650,763
-var float spy_month1_call_gex_3 = 0.7
-var float spy_month1_put_wall_1 = 650.00  // GEX: -1,335,558
+var float spy_month1_call_wall_2 = 679.00  // GEX: 2,040,063
+var float spy_month1_call_gex_2 = 2.0
+var float spy_month1_call_wall_3 = 705.00  // GEX: 1,583,499
+var float spy_month1_call_gex_3 = 1.6
+var float spy_month1_put_wall_1 = 650.00  // GEX: -1,338,600
 var float spy_month1_put_gex_1 = 1.3
-var float spy_month1_put_wall_2 = 640.00  // GEX: -1,069,216
+var float spy_month1_put_wall_2 = 640.00  // GEX: -1,076,981
 var float spy_month1_put_gex_2 = 1.1
-var float spy_month1_put_wall_3 = 652.00  // GEX: -404,002
-var float spy_month1_put_gex_3 = 0.4
+var float spy_month1_put_wall_3 = 630.00  // GEX: -1,027,550
+var float spy_month1_put_gex_3 = 1.0
 
 // ==================== SÉLECTION WALLS SELON SYMBOLE + EXPIRATION ====================
-call_wall_1 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_1 :
+call_wall_1 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_wall_1 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_wall_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_wall_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_wall_1 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_wall_1 :
               na
 
-call_wall_2 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_2 :
+call_wall_2 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_wall_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_wall_2 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_wall_2 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_wall_2 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_wall_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_wall_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_wall_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_wall_2 :
+              expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_wall_2 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_wall_2 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_wall_2 :
               na
 
-call_wall_3 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_3 :
+call_wall_3 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_wall_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_wall_3 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_wall_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_wall_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_wall_3 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_wall_3 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_wall_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_wall_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_wall_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_wall_3 :
+              expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_wall_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_wall_3 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_wall_3 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_wall_3 :
               na
 
-put_wall_1 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_wall_1 :
+put_wall_1 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_wall_1 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_wall_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_wall_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_wall_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_wall_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_wall_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_wall_1 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_wall_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_wall_1 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_wall_1 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_put_wall_1 :
               na
 
-put_wall_2 = expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_wall_2 :
+put_wall_2 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_wall_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_wall_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_wall_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_wall_2 :
+              expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_wall_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_wall_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_wall_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_put_wall_2 :
+              expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_wall_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_wall_2 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_wall_2 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_wall_2 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_wall_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_wall_2 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_wall_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_wall_2 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_wall_2 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_put_wall_2 :
               na
 
-put_wall_3 = expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_wall_3 :
+put_wall_3 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_wall_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_wall_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_wall_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_wall_3 :
+              expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_wall_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_wall_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_wall_3 :
+              expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_wall_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_wall_3 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_wall_3 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_wall_3 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_wall_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_wall_3 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_wall_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_wall_3 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_wall_3 :
@@ -360,120 +564,188 @@ put_wall_3 = expiration_select == "1st week (7d)" and current_symbol == "DIA" ? 
               na
 
 // Valeurs GEX en millions
-call_gex_1 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_1 :
+call_gex_1 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_gex_1 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_gex_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_gex_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_gex_1 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_gex_1 :
               na
-put_gex_1 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_gex_1 :
+put_gex_1 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_gex_1 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_gex_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_gex_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_gex_1 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_gex_1 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_gex_1 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_gex_1 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_gex_1 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_gex_1 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_gex_1 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_put_gex_1 :
               na
 
-call_gex_2 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_2 :
+call_gex_2 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_gex_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_gex_2 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_gex_2 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_gex_2 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_gex_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_gex_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_gex_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_gex_2 :
+              expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_gex_2 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_gex_2 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_gex_2 :
               na
-put_gex_2 = expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_gex_2 :
+put_gex_2 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_gex_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_gex_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_gex_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_gex_2 :
+              expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_gex_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_gex_2 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_gex_2 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_put_gex_2 :
+              expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_gex_2 :
+              expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_gex_2 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_gex_2 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_gex_2 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_gex_2 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_gex_2 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_gex_2 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_gex_2 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_gex_2 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_put_gex_2 :
               na
 
-call_gex_3 = expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_3 :
+call_gex_3 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_call_gex_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_call_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_call_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_call_gex_3 :
               expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_call_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_call_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_call_gex_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_call_gex_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "AMZN" ? amzn_month1_call_gex_3 :
               expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_call_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_call_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_call_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_call_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_call_gex_3 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_call_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_call_gex_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_call_gex_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_call_gex_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_call_gex_3 :
+              expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_call_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_call_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_call_gex_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_call_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_call_gex_3 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_call_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_call_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_call_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_call_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_call_gex_3 :
               expiration_select == "all" and current_symbol == "SPY" ? spy_week1_call_gex_3 :
               na
-put_gex_3 = expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_gex_3 :
+put_gex_3 = expiration_select == "0DTE (0d)" and current_symbol == "AAPL" ? aapl_0dte_put_gex_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AAPL" ? aapl_week1_put_gex_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AAPL" ? aapl_week2_put_gex_3 :
+              expiration_select == "1st month (30d)" and current_symbol == "AAPL" ? aapl_month1_put_gex_3 :
+              expiration_select == "all" and current_symbol == "AAPL" ? aapl_week1_put_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "AMZN" ? amzn_0dte_put_gex_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "AMZN" ? amzn_week1_put_gex_3 :
+              expiration_select == "2nd week (14d)" and current_symbol == "AMZN" ? amzn_week2_put_gex_3 :
+              expiration_select == "all" and current_symbol == "AMZN" ? amzn_week1_put_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "DIA" ? dia_0dte_put_gex_3 :
+              expiration_select == "1st week (7d)" and current_symbol == "DIA" ? dia_week1_put_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "DIA" ? dia_week2_put_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "DIA" ? dia_month1_put_gex_3 :
               expiration_select == "all" and current_symbol == "DIA" ? dia_week1_put_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "IBIT" ? ibit_0dte_put_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "IBIT" ? ibit_week1_put_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "IBIT" ? ibit_week2_put_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "IBIT" ? ibit_month1_put_gex_3 :
               expiration_select == "all" and current_symbol == "IBIT" ? ibit_week1_put_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "QQQ" ? qqq_0dte_put_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "QQQ" ? qqq_week1_put_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "QQQ" ? qqq_week2_put_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "QQQ" ? qqq_month1_put_gex_3 :
               expiration_select == "all" and current_symbol == "QQQ" ? qqq_week1_put_gex_3 :
+              expiration_select == "0DTE (0d)" and current_symbol == "SPY" ? spy_0dte_put_gex_3 :
               expiration_select == "1st week (7d)" and current_symbol == "SPY" ? spy_week1_put_gex_3 :
               expiration_select == "2nd week (14d)" and current_symbol == "SPY" ? spy_week2_put_gex_3 :
               expiration_select == "1st month (30d)" and current_symbol == "SPY" ? spy_month1_put_gex_3 :
