@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:15:08
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:31:50
 // Données du 2026-03-25 19:55:04
 // Source : Base de données MySQL GEX
 // Symboles supportés : SPY
@@ -22,11 +22,12 @@ put_color_2 = input.color(color.new(color.green, 40), "Put Wall #2", group="Coul
 put_color_3 = input.color(color.new(color.green, 60), "Put Wall #3", group="Couleurs")
 
 // ==================== DÉTECTION SYMBOLE ====================
-// Nettoyer le ticker pour enlever les préfixes (NYSE:, NASDAQ:, etc.)
+// Nettoyer le ticker pour enlever les préfixes (NYSE:, NASDAQ:, BATS:, etc.)
 current_symbol = str.replace(syminfo.tickerid, "NYSE:", "")
 current_symbol := str.replace(current_symbol, "NASDAQ:", "")
 current_symbol := str.replace(current_symbol, "AMEX:", "")
 current_symbol := str.replace(current_symbol, "CBOE:", "")
+current_symbol := str.replace(current_symbol, "BATS:", "")
 
 // ==================== DONNÉES GEX PAR SYMBOLE ====================
 
@@ -56,14 +57,14 @@ put_wall_3 = current_symbol == "SPY" ? spy_put_wall_3 : na
 // Fonction pour créer une ligne horizontale
 draw_hline(price, col, style, label_text) =>
     line_extend = extend_lines == "right" ? extend.right : extend_lines == "both" ? extend.both : extend.none
-    line.new(bar_index - 50, price, bar_index, price,
+    line.new(bar_index, price, bar_index, price,
              color=col, width=2, style=style, extend=line_extend)
 
     if show_labels
         label.new(bar_index, price, label_text,
-                  color=color.new(color.black, 10), textcolor=col,
-                  style=label.style_label_left, size=size.normal,
-                  textalign=text.align_left)
+                  color=color.new(col, 85), textcolor=col,
+                  style=label.style_label_center, size=size.small,
+                  textalign=text.align_center)
 
 // Afficher uniquement si symbole supporté ET sur la dernière barre
 if barstate.islast and not na(call_wall_1)
