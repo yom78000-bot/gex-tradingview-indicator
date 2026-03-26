@@ -1,4 +1,4 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:55:21
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 13:17:10
 // Données du 2026-03-25 19:55:04
 // Source : Base de données MySQL GEX
 // Symboles supportés : SPY
@@ -54,24 +54,42 @@ put_wall_3 = current_symbol == "SPY" ? spy_put_wall_3 : na
 
 // ==================== DESSIN DES LIGNES ====================
 
-// Utiliser plot() qui suit automatiquement l'échelle des prix (vertical ET horizontal)
-// Les plot() doivent être au niveau global (pas dans un if)
+// Supprimer les anciennes lignes à chaque mise à jour
+var line[] call_lines = array.new_line()
+var line[] put_lines = array.new_line()
 
-// Call Walls - plot() trace la valeur constante sur chaque barre = ligne horizontale qui suit l'échelle
-plot(show_call_walls and not na(call_wall_1) ? call_wall_1 : na,
-     title="Call Wall #1", color=call_color_1, linewidth=2, style=plot.style_line)
-plot(show_call_walls and not na(call_wall_2) ? call_wall_2 : na,
-     title="Call Wall #2", color=call_color_2, linewidth=2, style=plot.style_line)
-plot(show_call_walls and not na(call_wall_3) ? call_wall_3 : na,
-     title="Call Wall #3", color=call_color_3, linewidth=2, style=plot.style_line)
+if barstate.islast
+    // Supprimer les anciennes lignes
+    for l in call_lines
+        line.delete(l)
+    for l in put_lines
+        line.delete(l)
+    array.clear(call_lines)
+    array.clear(put_lines)
 
-// Put Walls
-plot(show_put_walls and not na(put_wall_1) ? put_wall_1 : na,
-     title="Put Wall #1", color=put_color_1, linewidth=2, style=plot.style_line)
-plot(show_put_walls and not na(put_wall_2) ? put_wall_2 : na,
-     title="Put Wall #2", color=put_color_2, linewidth=2, style=plot.style_line)
-plot(show_put_walls and not na(put_wall_3) ? put_wall_3 : na,
-     title="Put Wall #3", color=put_color_3, linewidth=2, style=plot.style_line)
+    // Dessiner les nouvelles lignes UNIQUEMENT si symbole supporté
+    if not na(call_wall_1)
+        // Call Walls
+        if show_call_walls and not na(call_wall_1)
+            array.push(call_lines, line.new(bar_index - 1, call_wall_1, bar_index, call_wall_1,
+                                             color=call_color_1, width=2, extend=extend.both))
+        if show_call_walls and not na(call_wall_2)
+            array.push(call_lines, line.new(bar_index - 1, call_wall_2, bar_index, call_wall_2,
+                                             color=call_color_2, width=2, extend=extend.both))
+        if show_call_walls and not na(call_wall_3)
+            array.push(call_lines, line.new(bar_index - 1, call_wall_3, bar_index, call_wall_3,
+                                             color=call_color_3, width=2, extend=extend.both))
+
+        // Put Walls
+        if show_put_walls and not na(put_wall_1)
+            array.push(put_lines, line.new(bar_index - 1, put_wall_1, bar_index, put_wall_1,
+                                            color=put_color_1, width=2, extend=extend.both))
+        if show_put_walls and not na(put_wall_2)
+            array.push(put_lines, line.new(bar_index - 1, put_wall_2, bar_index, put_wall_2,
+                                            color=put_color_2, width=2, extend=extend.both))
+        if show_put_walls and not na(put_wall_3)
+            array.push(put_lines, line.new(bar_index - 1, put_wall_3, bar_index, put_wall_3,
+                                            color=put_color_3, width=2, extend=extend.both))
 
 // Labels (uniquement sur la dernière barre)
 if barstate.islast and show_labels and not na(call_wall_1)
