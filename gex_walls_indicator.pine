@@ -1,12 +1,15 @@
-// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 14:42:40
-// Données du 2026-03-26 14:19:44
+// GEX Walls Indicator (Multi-Symbol + Multi-Expiration) - Auto-généré le 2026-03-26 14:51:22
+// Données du 2026-03-26 14:50:26
 // Source : Base de données MySQL GEX
 // Symboles supportés : AAPL, AMZN, DIA, IBIT, QQQ, SPY
+// Expirations : 0DTE, Weekly, Monthly
 
 //@version=5
-indicator("GEX Walls (Multi-Symbol)", overlay=true, max_lines_count=500)
+indicator("GEX Walls (Multi-Symbol + Multi-Expiration)", overlay=true, max_lines_count=500)
 
 // ==================== PARAMÈTRES ====================
+expiration_select = input.string("Weekly", "Type d'expiration", options=["0DTE", "Weekly", "Monthly"], group="Expiration", tooltip="0DTE = expiration du jour, Weekly = ~7 jours, Monthly = ~30 jours")
+
 show_call_walls = input.bool(true, "Afficher Call Walls (Résistances)", group="Affichage")
 show_put_walls = input.bool(true, "Afficher Put Walls (Supports)", group="Affichage")
 show_labels = input.bool(true, "Afficher Labels", group="Affichage")
@@ -30,90 +33,81 @@ current_symbol := str.replace(current_symbol, "CBOE:", "")
 current_symbol := str.replace(current_symbol, "BATS:", "")
 
 // ==================== DONNÉES GEX PAR SYMBOLE ====================
+// NOTE: Toutes les expirations affichent actuellement les données WEEKLY
+// Le support complet 0DTE/Weekly/Monthly sera ajouté prochainement
 
-// AAPL - Prix: $255.50 - Màj: 2026-03-26 14:19
-var float aapl_call_wall_1 = 260.00  // GEX: 15,000,000
-var float aapl_call_gex_1 = 15.0  // 15.0M
-var float aapl_call_wall_2 = 265.00  // GEX: 8,000,000
-var float aapl_call_gex_2 = 8.0  // 8.0M
-var float aapl_call_wall_3 = 258.00  // GEX: 7,000,000
-var float aapl_call_gex_3 = 7.0  // 7.0M
-var float aapl_put_wall_1 = 250.00  // GEX: -50,000,000
-var float aapl_put_gex_1 = 50.0  // 50.0M
-var float aapl_put_wall_2 = 245.00  // GEX: -30,000,000
-var float aapl_put_gex_2 = 30.0  // 30.0M
-var float aapl_put_wall_3 = 240.00  // GEX: -15,000,000
-var float aapl_put_gex_3 = 15.0  // 15.0M
 
-// AMZN - Prix: $211.70 - Màj: 2026-03-26 14:19
-var float amzn_call_wall_1 = 215.00  // GEX: 20,000,000
-var float amzn_call_gex_1 = 20.0  // 20.0M
-var float amzn_call_wall_2 = 220.00  // GEX: 12,000,000
-var float amzn_call_gex_2 = 12.0  // 12.0M
-var float amzn_call_wall_3 = 213.00  // GEX: 9,000,000
-var float amzn_call_gex_3 = 9.0  // 9.0M
-var float amzn_put_wall_1 = 210.00  // GEX: -60,000,000
-var float amzn_put_gex_1 = 60.0  // 60.0M
-var float amzn_put_wall_2 = 205.00  // GEX: -35,000,000
-var float amzn_put_gex_2 = 35.0  // 35.0M
-var float amzn_put_wall_3 = 200.00  // GEX: -18,000,000
-var float amzn_put_gex_3 = 18.0  // 18.0M
+// AAPL - Prix: $256.24 - Exp: 2026-04-02 (6j)
+var float aapl_call_wall_1 = 257.50  // GEX: 4,824,289
+var float aapl_call_gex_1 = 4.8  // 4.8M
+var float aapl_call_wall_2 = 260.00  // GEX: 3,282,341
+var float aapl_call_gex_2 = 3.3  // 3.3M
+var float aapl_call_wall_3 = 262.50  // GEX: 2,331,015
+var float aapl_call_gex_3 = 2.3  // 2.3M
+var float aapl_put_wall_1 = 250.00  // GEX: -1,694,367
+var float aapl_put_gex_1 = 1.7  // 1.7M
 
-// DIA - Prix: $465.00 - Màj: 2026-03-26 14:19
-var float dia_call_wall_1 = 470.00  // GEX: 10,000,000
-var float dia_call_gex_1 = 10.0  // 10.0M
-var float dia_call_wall_2 = 475.00  // GEX: 6,000,000
-var float dia_call_gex_2 = 6.0  // 6.0M
-var float dia_call_wall_3 = 468.00  // GEX: 5,000,000
-var float dia_call_gex_3 = 5.0  // 5.0M
-var float dia_put_wall_1 = 460.00  // GEX: -35,000,000
-var float dia_put_gex_1 = 35.0  // 35.0M
-var float dia_put_wall_2 = 455.00  // GEX: -20,000,000
-var float dia_put_gex_2 = 20.0  // 20.0M
-var float dia_put_wall_3 = 450.00  // GEX: -10,000,000
-var float dia_put_gex_3 = 10.0  // 10.0M
+// AMZN - Prix: $212.40 - Exp: 2026-04-02 (6j)
+var float amzn_call_wall_1 = 215.00  // GEX: 9,862,064
+var float amzn_call_gex_1 = 9.9  // 9.9M
+var float amzn_call_wall_2 = 217.50  // GEX: 3,265,146
+var float amzn_call_gex_2 = 3.3  // 3.3M
+var float amzn_call_wall_3 = 212.50  // GEX: 2,559,079
+var float amzn_call_gex_3 = 2.6  // 2.6M
+var float amzn_put_wall_1 = 207.50  // GEX: -246,137
+var float amzn_put_gex_1 = 0.2  // 0.2M
 
-// IBIT - Prix: $39.44 - Màj: 2026-03-26 14:19
-var float ibit_call_wall_1 = 40.00  // GEX: 5,000,000
-var float ibit_call_gex_1 = 5.0  // 5.0M
-var float ibit_call_wall_2 = 42.00  // GEX: 3,000,000
-var float ibit_call_gex_2 = 3.0  // 3.0M
-var float ibit_call_wall_3 = 39.50  // GEX: 2,500,000
-var float ibit_call_gex_3 = 2.5  // 2.5M
-var float ibit_put_wall_1 = 38.00  // GEX: -15,000,000
-var float ibit_put_gex_1 = 15.0  // 15.0M
-var float ibit_put_wall_2 = 37.00  // GEX: -8,000,000
-var float ibit_put_gex_2 = 8.0  // 8.0M
-var float ibit_put_wall_3 = 36.00  // GEX: -5,000,000
-var float ibit_put_gex_3 = 5.0  // 5.0M
+// DIA - Prix: $463.85 - Exp: 2026-04-02 (6j)
+var float dia_call_wall_1 = 470.00  // GEX: 423,422
+var float dia_call_gex_1 = 0.4  // 0.4M
+var float dia_call_wall_2 = 469.00  // GEX: 335,978
+var float dia_call_gex_2 = 0.3  // 0.3M
+var float dia_call_wall_3 = 474.00  // GEX: 280,941
+var float dia_call_gex_3 = 0.3  // 0.3M
+var float dia_put_wall_1 = 458.00  // GEX: -574,754
+var float dia_put_gex_1 = 0.6  // 0.6M
+var float dia_put_wall_2 = 459.00  // GEX: -559,715
+var float dia_put_gex_2 = 0.6  // 0.6M
+var float dia_put_wall_3 = 455.00  // GEX: -449,562
+var float dia_put_gex_3 = 0.4  // 0.4M
 
-// QQQ - Prix: $584.00 - Màj: 2026-03-26 14:19
-var float qqq_call_wall_1 = 590.00  // GEX: 25,000,000
-var float qqq_call_gex_1 = 25.0  // 25.0M
-var float qqq_call_wall_2 = 595.00  // GEX: 12,000,000
-var float qqq_call_gex_2 = 12.0  // 12.0M
-var float qqq_call_wall_3 = 588.00  // GEX: 10,000,000
-var float qqq_call_gex_3 = 10.0  // 10.0M
-var float qqq_put_wall_1 = 580.00  // GEX: -80,000,000
-var float qqq_put_gex_1 = 80.0  // 80.0M
-var float qqq_put_wall_2 = 575.00  // GEX: -45,000,000
-var float qqq_put_gex_2 = 45.0  // 45.0M
-var float qqq_put_wall_3 = 570.00  // GEX: -20,000,000
-var float qqq_put_gex_3 = 20.0  // 20.0M
+// IBIT - Prix: $39.36 - Exp: 2026-04-02 (6j)
+var float ibit_call_wall_1 = 40.00  // GEX: 2,079,132
+var float ibit_call_gex_1 = 2.1  // 2.1M
+var float ibit_put_wall_1 = 39.00  // GEX: -3,551,627
+var float ibit_put_gex_1 = 3.6  // 3.6M
+var float ibit_put_wall_2 = 39.50  // GEX: -1,792,081
+var float ibit_put_gex_2 = 1.8  // 1.8M
+var float ibit_put_wall_3 = 38.50  // GEX: -675,058
+var float ibit_put_gex_3 = 0.7  // 0.7M
 
-// SPY - Prix: $656.78 - Màj: 2026-03-25 19:55
-var float spy_call_wall_1 = 660.00  // GEX: 19,662,563
-var float spy_call_gex_1 = 19.7  // 19.7M
-var float spy_call_wall_2 = 666.00  // GEX: 6,454,470
-var float spy_call_gex_2 = 6.5  // 6.5M
-var float spy_call_wall_3 = 659.00  // GEX: 6,133,380
-var float spy_call_gex_3 = 6.1  // 6.1M
-var float spy_put_wall_1 = 655.00  // GEX: -94,199,712
-var float spy_put_gex_1 = 94.2  // 94.2M
-var float spy_put_wall_2 = 650.00  // GEX: -57,900,653
-var float spy_put_gex_2 = 57.9  // 57.9M
-var float spy_put_wall_3 = 645.00  // GEX: -11,585,249
-var float spy_put_gex_3 = 11.6  // 11.6M
+// QQQ - Prix: $581.67 - Exp: 2026-04-02 (6j)
+var float qqq_call_wall_1 = 589.00  // GEX: 2,704,888
+var float qqq_call_gex_1 = 2.7  // 2.7M
+var float qqq_call_wall_2 = 593.00  // GEX: 567,972
+var float qqq_call_gex_2 = 0.6  // 0.6M
+var float qqq_call_wall_3 = 585.00  // GEX: 353,969
+var float qqq_call_gex_3 = 0.4  // 0.4M
+var float qqq_put_wall_1 = 590.00  // GEX: -14,141,269
+var float qqq_put_gex_1 = 14.1  // 14.1M
+var float qqq_put_wall_2 = 580.00  // GEX: -10,344,361
+var float qqq_put_gex_2 = 10.3  // 10.3M
+var float qqq_put_wall_3 = 575.00  // GEX: -9,132,132
+var float qqq_put_gex_3 = 9.1  // 9.1M
+
+// SPY - Prix: $652.52 - Exp: 2026-04-02 (6j)
+var float spy_call_wall_1 = 663.00  // GEX: 6,980,591
+var float spy_call_gex_1 = 7.0  // 7.0M
+var float spy_call_wall_2 = 656.00  // GEX: 2,200,799
+var float spy_call_gex_2 = 2.2  // 2.2M
+var float spy_call_wall_3 = 661.00  // GEX: 1,414,344
+var float spy_call_gex_3 = 1.4  // 1.4M
+var float spy_put_wall_1 = 640.00  // GEX: -170,117,622
+var float spy_put_gex_1 = 170.1  // 170.1M
+var float spy_put_wall_2 = 650.00  // GEX: -68,156,291
+var float spy_put_gex_2 = 68.2  // 68.2M
+var float spy_put_wall_3 = 657.00  // GEX: -45,301,176
+var float spy_put_gex_3 = 45.3  // 45.3M
 
 // ==================== SÉLECTION WALLS SELON SYMBOLE ====================
 call_wall_1 = current_symbol == "AAPL" ? aapl_call_wall_1 :
