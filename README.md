@@ -5,11 +5,12 @@ Indicateur TradingView universel affichant les niveaux de Gamma Exposure (GEX) p
 ## 🚀 Caractéristiques
 
 - **Multi-symboles** : Détection automatique du symbole du graphique
+- **Multi-expirations** : 0DTE (0j), 1st week (~7j), 2nd week (~14j), 1st month (~30j), all
 - **Mise à jour automatique** : Calculs GEX toutes les 5 minutes pendant les heures de marché
 - **6 niveaux GEX** : Top 3 Call Walls (résistances) + Top 3 Put Walls (supports)
 - **Gamma Flip (Zero Gamma)** : Niveau de bascule entre gamma positif et négatif
 - **Zone de stabilité** : Visualisation de la zone entre Call Wall #1 et Put Wall #1
-- **Paramètres personnalisables** : Couleurs, labels, extension des lignes
+- **Paramètres personnalisables** : Couleurs, labels, extension des lignes, choix de l'expiration
 
 ## 📊 Symboles supportés
 
@@ -50,6 +51,13 @@ L'indicateur détecte automatiquement le symbole du graphique :
   - Prix dans la zone → Marché équilibré
 
 ### Paramètres disponibles
+
+**Expiration** :
+- **0DTE (0d)** : Expiration du jour même (0 jours)
+- **1st week (7d)** : Première expiration hebdomadaire (~7 jours)
+- **2nd week (14d)** : Deuxième expiration hebdomadaire (~14 jours)
+- **1st month (30d)** : Première expiration mensuelle (~30 jours)
+- **all** : Affiche toutes les expirations (défaut : 1st week)
 
 **Affichage** :
 - Afficher/masquer Call Walls
