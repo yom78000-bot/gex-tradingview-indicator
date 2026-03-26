@@ -1,0 +1,18 @@
+{
+  "version": "2026-03-26T12:21:00Z",
+  "symbols": ["SPY"],
+  "spy": {
+    "price": 656.78,
+    "call_walls": [
+      {"rank": 1, "strike": 660.0, "gex": 19662563},
+      {"rank": 2, "strike": 666.0, "gex": 6454470},
+      {"rank": 3, "strike": 659.0, "gex": 6133380}
+    ],
+    "put_walls": [
+      {"rank": 1, "strike": 655.0, "gex": -94199712},
+      {"rank": 2, "strike": 650.0, "gex": -57900653},
+      {"rank": 3, "strike": 645.0, "gex": -11585249}
+    ],
+    "last_update": "2026-03-25T19:55:04Z"
+  }
+}

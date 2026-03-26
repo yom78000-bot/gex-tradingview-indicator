@@ -1,0 +1,123 @@
+// GEX Walls Indicator (Multi-Symbol Universal) - Auto-généré le 2026-03-26 12:15:08
+// Données du 2026-03-25 19:55:04
+// Source : Base de données MySQL GEX
+// Symboles supportés : SPY
+
+//@version=5
+indicator("GEX Walls (Multi-Symbol)", overlay=true, max_lines_count=500)
+
+// ==================== PARAMÈTRES ====================
+show_call_walls = input.bool(true, "Afficher Call Walls (Résistances)", group="Affichage")
+show_put_walls = input.bool(true, "Afficher Put Walls (Supports)", group="Affichage")
+show_labels = input.bool(true, "Afficher Labels", group="Affichage")
+extend_lines = input.string("right", "Extension lignes", options=["none", "right", "both"], group="Affichage")
+
+// Styles
+call_color_1 = input.color(color.new(color.red, 0), "Call Wall #1", group="Couleurs")
+call_color_2 = input.color(color.new(color.red, 40), "Call Wall #2", group="Couleurs")
+call_color_3 = input.color(color.new(color.red, 60), "Call Wall #3", group="Couleurs")
+
+put_color_1 = input.color(color.new(color.green, 0), "Put Wall #1", group="Couleurs")
+put_color_2 = input.color(color.new(color.green, 40), "Put Wall #2", group="Couleurs")
+put_color_3 = input.color(color.new(color.green, 60), "Put Wall #3", group="Couleurs")
+
+// ==================== DÉTECTION SYMBOLE ====================
+// Nettoyer le ticker pour enlever les préfixes (NYSE:, NASDAQ:, etc.)
+current_symbol = str.replace(syminfo.tickerid, "NYSE:", "")
+current_symbol := str.replace(current_symbol, "NASDAQ:", "")
+current_symbol := str.replace(current_symbol, "AMEX:", "")
+current_symbol := str.replace(current_symbol, "CBOE:", "")
+
+// ==================== DONNÉES GEX PAR SYMBOLE ====================
+
+// SPY - Prix: $656.78 - Màj: 2026-03-25 19:55
+var float spy_call_wall_1 = 660.00  // GEX: 19,662,563
+var float spy_call_wall_2 = 666.00  // GEX: 6,454,470
+var float spy_call_wall_3 = 659.00  // GEX: 6,133,380
+var float spy_put_wall_1 = 655.00  // GEX: -94,199,712
+var float spy_put_wall_2 = 650.00  // GEX: -57,900,653
+var float spy_put_wall_3 = 645.00  // GEX: -11,585,249
+
+// ==================== SÉLECTION WALLS SELON SYMBOLE ====================
+call_wall_1 = current_symbol == "SPY" ? spy_call_wall_1 : na
+
+call_wall_2 = current_symbol == "SPY" ? spy_call_wall_2 : na
+
+call_wall_3 = current_symbol == "SPY" ? spy_call_wall_3 : na
+
+put_wall_1 = current_symbol == "SPY" ? spy_put_wall_1 : na
+
+put_wall_2 = current_symbol == "SPY" ? spy_put_wall_2 : na
+
+put_wall_3 = current_symbol == "SPY" ? spy_put_wall_3 : na
+
+// ==================== DESSIN DES LIGNES ====================
+
+// Fonction pour créer une ligne horizontale
+draw_hline(price, col, style, label_text) =>
+    line_extend = extend_lines == "right" ? extend.right : extend_lines == "both" ? extend.both : extend.none
+    line.new(bar_index - 50, price, bar_index, price,
+             color=col, width=2, style=style, extend=line_extend)
+
+    if show_labels
+        label.new(bar_index, price, label_text,
+                  color=color.new(color.black, 10), textcolor=col,
+                  style=label.style_label_left, size=size.normal,
+                  textalign=text.align_left)
+
+// Afficher uniquement si symbole supporté ET sur la dernière barre
+if barstate.islast and not na(call_wall_1)
+    // Dessiner Call Walls
+    if show_call_walls
+        draw_hline(call_wall_1, call_color_1, line.style_solid,
+                   "C1: $" + str.tostring(call_wall_1, "#.##"))
+    if show_call_walls and not na(call_wall_2)
+        draw_hline(call_wall_2, call_color_2, line.style_solid,
+                   "C2: $" + str.tostring(call_wall_2, "#.##"))
+    if show_call_walls and not na(call_wall_3)
+        draw_hline(call_wall_3, call_color_3, line.style_solid,
+                   "C3: $" + str.tostring(call_wall_3, "#.##"))
+
+    // Dessiner Put Walls
+    if show_put_walls and not na(put_wall_1)
+        draw_hline(put_wall_1, put_color_1, line.style_solid,
+                   "P1: $" + str.tostring(put_wall_1, "#.##"))
+    if show_put_walls and not na(put_wall_2)
+        draw_hline(put_wall_2, put_color_2, line.style_solid,
+                   "P2: $" + str.tostring(put_wall_2, "#.##"))
+    if show_put_walls and not na(put_wall_3)
+        draw_hline(put_wall_3, put_color_3, line.style_solid,
+                   "P3: $" + str.tostring(put_wall_3, "#.##"))
+
+else
+    // Message si symbole non supporté
+    if barstate.islast
+        label.new(bar_index, close, "GEX non disponible pour " + current_symbol, color=color.orange, textcolor=color.white, style=label.style_label_center, size=size.normal)
+
+// ==================== ZONE DE STABILITÉ ====================
+// Les plot() doivent être au niveau global (pas dans un if)
+top_wall = not na(call_wall_1) ? call_wall_1 : na
+bottom_wall = not na(put_wall_1) ? put_wall_1 : na
+
+plot_top = plot(top_wall, color=color.new(color.white, 100), display=display.none, title="Top Wall")
+plot_bottom = plot(bottom_wall, color=color.new(color.white, 100), display=display.none, title="Bottom Wall")
+fill(plot_top, plot_bottom, color=color.new(color.gray, 90), title="Zone de stabilité")
+
+// ==================== TABLE INFO ====================
+var table info_table = table.new(position.top_right, 2, 4, bgcolor=color.new(color.black, 80))
+
+if barstate.islast and not na(call_wall_1)
+    table.cell(info_table, 0, 0, "GEX Walls", text_color=color.white, text_size=size.normal)
+    table.cell(info_table, 1, 0, current_symbol, text_color=color.yellow, text_size=size.normal)
+
+    table.cell(info_table, 0, 1, "Call Wall #1", text_color=color.red)
+    table.cell(info_table, 1, 1, "$" + str.tostring(call_wall_1, "#.##"), text_color=color.red)
+
+    table.cell(info_table, 0, 2, "Put Wall #1", text_color=color.green)
+    table.cell(info_table, 1, 2, "$" + str.tostring(put_wall_1, "#.##"), text_color=color.green)
+
+    current_price = close
+    status = current_price > top_wall ? "⚠️ AU-DESSUS" : current_price < bottom_wall ? "⚠️ EN-DESSOUS" : "✓ STABILITÉ"
+    status_color = current_price > top_wall ? color.red : current_price < bottom_wall ? color.green : color.yellow
+    table.cell(info_table, 0, 3, "Status", text_color=color.white)
+    table.cell(info_table, 1, 3, status, text_color=status_color)
